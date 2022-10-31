@@ -79,4 +79,19 @@ public class CustomListTest {
         list.delete(city);
         assertThrows(IllegalArgumentException.class, ()->list.delete(city));
     }
+
+    /**
+     * add two new cities to the list
+     * check if list contains two city objects
+     */
+    @Test
+    public void countCitiesTest() {
+        list = MockCityList();
+        City city1 = new City("Edmonton", "AB");
+        list.addCity(city1);
+        City city2 = new City("Winnipeg", "MB");
+        list.addCity(city2);
+
+        assertEquals(2, list.countCities());
+    }
 }
